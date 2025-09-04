@@ -34,3 +34,9 @@ ANSWERS
 
 56. mean = total / count
 
+58. I feel like there are some missing information on this question, but I tried to do it using what I've learned. I think that using println is a lot easier to use than printf because in println you just have to add additions to include variables whereas in printf you have to understand how %d and %n work.
+
+59. Because the returned value of the refunded amount is the balance's value and the balance's value is set back to 0.
+
+60. It becomes an error because a return statement's purpose is to stop the execution of a method or a string of code and return a value after.
+
