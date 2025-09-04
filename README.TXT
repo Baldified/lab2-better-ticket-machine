@@ -28,3 +28,9 @@ ANSWERS
 
 52. It is possible to remove the else part of the if statement in the printTicket method, but when printing a ticket without inserting any money will result in nothing happening.
 
+53. No, it is not possible for balance field to ever be set to a negative value by substracting price from it using printTicket method because the boolean (balance >= price) prevents the printTicket method to work with price values below the balance's value.
+
+55. saving = price * discount
+
+56. mean = total / count
+
