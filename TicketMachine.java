@@ -104,7 +104,7 @@ public class TicketMachine
          // TODO: Write an if-statement that checks budget against price and prints
         // a message weather a ticket is affordable
         if(price > budget) {
-            System.out.println("Too expensive.");
+            System.out.println("Too expensive. Your budget is " + budget + " cents.");
         }
         else{
             System.out.println("Just right.");
