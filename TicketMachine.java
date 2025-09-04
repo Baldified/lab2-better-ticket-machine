@@ -18,7 +18,7 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     
-    
+
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -104,7 +104,7 @@ public class TicketMachine
          // TODO: Write an if-statement that checks budget against price and prints
         // a message weather a ticket is affordable
         if(price > budget) {
-            System.out.println("Too expensive. Your budget is " + budget + " cents.");
+            System.out.printf("Too expensive. Your budget is %d cents. %n", budget);
         }
         else{
             System.out.println("Just right.");
