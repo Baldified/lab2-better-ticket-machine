@@ -40,3 +40,5 @@ ANSWERS
 
 60. It becomes an error because a return statement's purpose is to stop the execution of a method or a string of code and return a value after.
 
+61. Yes, it compiles. It does not add the amount set for the price of a ticket to the price field in the inspector. It doesn't work because adding int to the constructors parameters will create a new variable.
+
