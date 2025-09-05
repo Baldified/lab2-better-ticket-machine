@@ -110,4 +110,16 @@ public class TicketMachine
             System.out.println("Just right.");
         }
     }
+    
+    /**
+     * emptyMachine
+     */
+    public int emptyMachine()
+    {
+        int amountToReturn;
+        amountToReturn = total;
+        total = 0;
+        return amountToReturn;
+    }
+    
 }
