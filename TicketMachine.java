@@ -14,9 +14,9 @@ public class TicketMachine
     // The price of a ticket from this machine.
     private int price;
     // The amount of money entered by a customer so far.
-    private int balance;
+    private double balance;
     // The total amount of money collected by this machine.
-    private int total;
+    private double total;
     
     
 
@@ -41,7 +41,7 @@ public class TicketMachine
     /**
      * Return The amount of money already inserted for the next ticket.
      */
-    public int getBalance()
+    public double getBalance()
     {
         return balance;
     }
@@ -67,14 +67,14 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        int amountLeftToPay;
+        double amountLeftToPay;
         amountLeftToPay = price - balance;
         if(amountLeftToPay <= 0) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + price + " dollars");
             System.out.println("##################");
             System.out.println();
 
@@ -84,7 +84,7 @@ public class TicketMachine
             balance = balance - price;
         }
         else{
-            System.out.printf("You have %d cents left to pay %n" , amountLeftToPay);
+            System.out.println("You have " + amountLeftToPay + " dollars left to pay");
         }
         
     }
@@ -93,9 +93,9 @@ public class TicketMachine
      * Return the money in the balance.
      * The balance is cleared.
      */
-    public int refundBalance()
+    public double refundBalance()
     {
-        int amountToRefund;
+        double amountToRefund;
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
@@ -109,7 +109,7 @@ public class TicketMachine
          // TODO: Write an if-statement that checks budget against price and prints
         // a message weather a ticket is affordable
         if(price > budget) {
-            System.out.printf("Too expensive. Your budget is %d cents. %n", budget);
+            System.out.printf("Too expensive. Your budget is %d dollars. %n", budget);
         }
         else{
             System.out.println("Just right.");
@@ -119,39 +119,41 @@ public class TicketMachine
     /**
      * emptyMachine
      */
-    public int emptyMachine()
+    public double emptyMachine()
     {
-        int amountToReturn;
+        double amountToReturn;
         amountToReturn = total;
         total = 0;
         return amountToReturn;
     }
     
     /**
-     * Discount
+     * Discounted Tickets (50% off)
      */
-    public void printDiscountedTicket()
+     public void printDiscountedTicket()
     {
-        int discount;
-        int amountLeftToPay;
-        discount = price * (1 / 2);
-        amountLeftToPay = discount - balance;
+        double discount;
+        double discountedTicket;
+        double amountLeftToPay;
+        discount = 50;
+        discountedTicket = price * (discount / 100);
+        amountLeftToPay = price - discountedTicket - balance;
         if(amountLeftToPay <= 0) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Discounted Ticket");
-            System.out.println("# " + discount + " cents.");
+            System.out.println("# " + discountedTicket + " dollars");
             System.out.println("##################");
             System.out.println();
 
             // Update the total collected with the price.
-            total = total + discount;
+            total = total + discountedTicket;
             // Reduce the balance by the price.
-            balance = balance - discount;
+            balance = balance - discountedTicket;
         }
         else{
-            System.out.printf("You have %d cents left to pay %n" , amountLeftToPay);
+            System.out.println("You have " + amountLeftToPay + " dollars left to pay.");
         }
         
     }
