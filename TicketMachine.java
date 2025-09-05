@@ -128,7 +128,7 @@ public class TicketMachine
     }
     
     /**
-     * Discounted Tickets (50% off)
+     * Discounted Tickets (50% off) a
      */
      public void printDiscountedTicket()
     {
