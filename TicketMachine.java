@@ -18,7 +18,7 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     
-
+    
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -127,4 +127,32 @@ public class TicketMachine
         return amountToReturn;
     }
     
+    /**
+     * Discount
+     */
+    public void printDiscountedTicket()
+    {
+        int discount;
+        int amountLeftToPay;
+        discount = price * (1 / 2);
+        amountLeftToPay = discount - balance;
+        if(amountLeftToPay <= 0) {
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Discounted Ticket");
+            System.out.println("# " + discount + " cents.");
+            System.out.println("##################");
+            System.out.println();
+
+            // Update the total collected with the price.
+            total = total + discount;
+            // Reduce the balance by the price.
+            balance = balance - discount;
+        }
+        else{
+            System.out.printf("You have %d cents left to pay %n" , amountLeftToPay);
+        }
+        
+    }
 }
